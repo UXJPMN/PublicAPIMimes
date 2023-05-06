@@ -1,6 +1,6 @@
 {
   "name": "mimic-app",
-  "homepage": "https://uxjpmn.github.io/PublicAPIMimes/",
+  "homepage": "https://uxjpmn.github.io/PublicAPIMimes",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
