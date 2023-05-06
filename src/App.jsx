@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import { getOPCharacters } from './services/onePiece';
 import { getPokemons } from './services/pokemon';
+import { getSWCharacters } from './services/starWars';
 import ThemeSelection from './components/themeSelection';
 import Game from './components/game';
 
@@ -27,6 +28,12 @@ function App() {
 
     fillData(response, 'Pokémon Mimic');
   }, [fillData]);
+
+  const fillStarWarsCharacters = useCallback(async () => {
+    const response = await getSWCharacters();
+
+    fillData(response, 'Star Wars Mimic')
+  }, [fillData]);
   
   const handleSelectedTheme = useCallback((theme) => {
     setTheme(theme);
@@ -39,10 +46,17 @@ function App() {
       case 'POKEMON':
         fillPokemonCharacters();
         break;
+      case 'STAR_WARS':
+        fillStarWarsCharacters();
+        break;
       default:
         break;
     }
-  }, [fillOnePieceCharacters, fillPokemonCharacters]);
+  }, [
+    fillOnePieceCharacters,
+    fillPokemonCharacters,
+    fillStarWarsCharacters
+  ]);
 
   const handleChangeTheme = useCallback(() => {
     setTheme('');

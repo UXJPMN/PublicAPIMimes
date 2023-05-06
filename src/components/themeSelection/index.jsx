@@ -16,6 +16,11 @@ const ThemeSelection = ({ handleSelectedTheme }) => {
               Pokémon
             </button>
           </li>
+          <li>
+            <button onClick={() => handleSelectedTheme('STAR_WARS')}>
+              Star Wars
+            </button>
+          </li>
         </ul>
       </main>
     </>
